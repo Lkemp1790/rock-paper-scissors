@@ -2,8 +2,8 @@ const selections = ["Rock", "Paper", "Scissors"];
 const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
-let playerScore = 0
-let computerScore = 0
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * 3);
@@ -50,8 +50,8 @@ function playRound(playerSelection, computerSelection) {
     };
 
     document.getElementById('result').innerHTML = result;
-    document.getElementById('player-score').innerHTML = "Your score = " + playerScore
-    document.getElementById('computer-score').innerHTML = "Computer score = " + computerScore
+    document.getElementById('player-score').innerHTML = "Your score = " + playerScore;
+    document.getElementById('computer-score').innerHTML = "Computer score = " + computerScore;
 }
 
 rockButton.addEventListener('click', () => {
