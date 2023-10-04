@@ -16,6 +16,7 @@ function playRound(playerSelection, computerSelection) {
     const playerChoice = playerSelection.toLowerCase();
     const computerChoice = computerSelection.toLowerCase();
     let result = ""
+
     if (playerChoice === computerChoice) {
         result = 'It\'s a tie!';
     }
@@ -26,12 +27,26 @@ function playRound(playerSelection, computerSelection) {
        (playerChoice === 'scissors' && computerChoice === 'paper')
     ){
         result = 'You win! ' + playerChoice + ' beats ' + computerChoice;
-        playerScore += 1
+        playerScore += 1;
+
+        if (playerScore === 5) {
+            result = 'You won the game refresh the page to play again';
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+        }
     }
 
     else {
           result = 'you lose ' + computerChoice + ' beats ' + playerChoice;
-          computerScore += 1  
+          computerScore += 1;
+          
+          if (computerScore === 5) {
+            result = 'You lost the game refresh the page to play again';
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+          }
     };
 
     document.getElementById('result').innerHTML = result;
